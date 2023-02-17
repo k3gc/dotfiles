@@ -35,7 +35,9 @@ Estos son mis dotfiles para BSPWM y Polybar.
 ```sh
 install.sh
 ```
-Este script de instalacion solo funciona para Arch Linux
+Advertencia: script de instalacion solo funciona para Arch Linux
+
+* Descarga [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Creditos
 
