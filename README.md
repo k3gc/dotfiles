@@ -22,8 +22,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 - <code>super + @space</code> Abre el menu de aplicaciones.
 - <code>super + Return</code> Abre la terminal.
-- <code>super + Print</code> Toma una captura de pantalla.
-- <code>super + w</code> Mata un proceso o ventana.
+- <code>super + w</code> Cerrar ventana.
 - <code>super + alt + r</code> Reinicia bspwm.
 - <code>super + alt + p</code> Apagar PC.
 - <code>super + alt + r</code> Reiniciar PC.
