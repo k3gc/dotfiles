@@ -57,7 +57,7 @@ while true; do
 			
 logo "Installing needed packages.."
 
-dependencias=(bspwm polybar sxhkd dunst rofi git mpd picom)
+dependencias=(bspwm polybar sxhkd dunst rofi cmatrix lxappearance pcmanfm nitrogen)
 
 printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
 for paquete in "${dependencias[@]}"
@@ -83,32 +83,11 @@ else
 	cp -r $HOME/dotfiles/config/* $HOME/.config
 fi
 
-if [ ! -d $HOME/.local/bin ]; then
-	mkdir -p $HOME/.local/bin
-	cp -r $HOME/dotfiles/misc/bin/* $HOME/.local/bin
-else
-	cp -r $HOME/dotfiles/misc/bin/* $HOME/.local/bin
-fi
-
-if [ ! -d $HOME/.local/share/applications ]; then
-	mkdir -p $HOME/.local/share/applications
-	cp -r $HOME/dotfiles/misc/applications/* $HOME/.local/share/applications
-else
-	cp -r $HOME/dotfiles/misc/applications/* $HOME/.local/share/applications
-fi
-
-if [ ! -d $HOME/.local/share/asciiart ]; then
-	mkdir -p $HOME/.local/share/asciiart
-	cp -r $HOME/dotfiles/misc/asciiart/* $HOME/.local/share/asciiart
-else
-	cp -r $HOME/dotfiles/misc/asciiart/* $HOME/.local/share/asciiart
-fi
-
 if [ ! -d $HOME/.local/share/fonts ]; then
 	mkdir -p $HOME/.local/share/fonts
-	cp -r $HOME/dotfiles/misc/fonts/* $HOME/.local/share/fonts
+	cp -r misc/fonts/* $HOME/.local/share/fonts
 else
-	cp -r $HOME/dotfiles/misc/fonts/* $HOME/.local/share/fonts
+	cp -r misc/fonts/* $HOME/.local/share/fonts
 fi
 
 printf "%s%sFiles copied succesfully!!%s\n" "${BLD}" "${CGR}" "${CNC}"
@@ -118,13 +97,6 @@ clear
 logo "Reloading fonts.."
 fc-cache -rv >/dev/null 2>&1
 printf "%s%sFonts reloaded succesfully!%s\n" "${BLD}" "${CGR}" "${CNC}"
-sleep 2
-clear
-
-logo "Enabling MPD service"
-systemctl --user enable mpd.service
-systemctl --user start mpd.service
-printf "%s%sDone!!%s\n" "${BLD}" "${CGR}" "${CNC}"
 sleep 2
 clear
 
