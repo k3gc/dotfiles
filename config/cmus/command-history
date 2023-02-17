@@ -1,0 +1,7 @@
+add /home/sof1/Music/sewerslt/
+clear
+add /home/sof1/Music/free/
+rm /home/sof1/Music
+remove /home/sof1/Music
+add /home/sof1/Music/
+add /home/sof1/Music
