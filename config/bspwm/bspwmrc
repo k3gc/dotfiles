@@ -4,7 +4,6 @@ pkill sxhkd
 sxhkd &
 
 xsetroot -cursor_name left_ptr &
-dunst -conf ~/.config/dunst/dunstrc &
 picom --config ~/.config/bspwm/picom.conf &
 dunst -conf ~/.config/dunst/dunstrc &
 
