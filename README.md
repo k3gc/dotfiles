@@ -6,7 +6,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 ## Información:
 **detalles sobre mi configuración:**
 
-* **OS:**  Arch Linux
+* **OS:**  Fedora Linux
 
 * **WM:**  Bspwm
 
