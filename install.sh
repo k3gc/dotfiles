@@ -57,7 +57,7 @@ while true; do
 			
 logo "Installing needed packages.."
 
-dependencias=(dunst rofi cmatrix lxappearance pcmanfm nitrogen)
+dependencias=(dunst rofi cmatrix polybar lxappearance pcmanfm nitrogen)
 
 printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
 for paquete in "${dependencias[@]}"
