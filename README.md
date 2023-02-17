@@ -1,4 +1,4 @@
-![miku](https://user-images.githubusercontent.com/119272540/219451449-d9c03365-5218-448b-95a2-e5cc5cfb0ab6.png)
+![miku](https://user-images.githubusercontent.com/119272540/219783639-efc88fdb-3738-4d7d-93a1-d2b693e59966.png)
 
 ## ¡Hola!
 Estos son mis dotfiles para BSPWM y Polybar.
