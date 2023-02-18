@@ -128,8 +128,7 @@ echo -e "\e[1;36m  Elige una opcion:"
 echo " "
 echo -e "\e[1;36m  {1} -> \e[1;37mInstall dotfiles"
 echo -e "\e[1;36m  {2} -> \e[1;37mInstall papirus-icon-theme"
-echo -e "\e[1;36m  {3} -> \e[1;37msoon"
-echo -e "\e[1;36m  {4} -> \e[1;37msoon"
+echo -e "\e[1;36m  {4} -> \e[1;37mExit"
 echo " "
 echo -n -e "\e[1;36m  > "
 echo -n -e "\e[1;37m"
@@ -144,11 +143,6 @@ if [ $DD == 2 ]; then
 	install_papirus_icon
 fi
 if [ $DD == 3 ]; then
-	echo "HELLO"
-
-fi
-if [ $DD == 4 ]; then
-	echo "HELLO"
-
+	exit
 fi
 
