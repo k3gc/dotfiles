@@ -119,12 +119,12 @@ function title() {
 	echo -e "     _/ // / / (__  ) /_/ /_/ / / /  "
 	echo -e "    /___/_/ /_/____/\__/\__,_/_/_/   "
 	echo -e "                            /_/                      "
-	echo -e "\e[1;35m                                     By sofi_32  "
+	echo -e "\e[1;35m                                     By k3gc  "
 	echo " "
 }
 
 title
-echo -e "\e[1;36m  Elige una opcion:"
+echo -e "\e[1;36m  select an option:"
 echo " "
 echo -e "\e[1;36m  {1} -> \e[1;37mInstall dotfiles"
 echo -e "\e[1;36m  {2} -> \e[1;37mInstall papirus-icon-theme"
