@@ -40,9 +40,11 @@ sudo pacman -S ranger
 
 sudo pacman -S gimp
 
-sudo pacman -S moc
+sudo pacman -S moc or cmus
 
-sudo pacman -S cmus
+sudo pacman -S vlc
+
+sudo pacman -S krita
 
 sudo pacman -S cmatrix
 
