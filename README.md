@@ -29,6 +29,12 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 ## Instalacion:
 
+<b>Clona este repositorio</b>
+
+```git
+git clone https://github.com/k3gc/dotfiles
+```
+
 <b>Ejecuta el script de instalacion</b>
 
 ```sh
