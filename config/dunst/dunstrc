@@ -1,6 +1,6 @@
-# - z0mbi3
-# - https://github.com/gh0stzk/dotfiles
-# - z0mbi3.zk@protonmail.com
+# - k3gc
+# - https://github.com/k3gc/dotfiles
+# - https://t.me/Xxsofy_xX
 
 [global]
 title = Dunst
@@ -19,7 +19,7 @@ separator_height = 2
 padding = 8
 horizontal_padding = 11
 frame_width = 6
-frame_color = "#073333"
+frame_color = "#064848"
 separator_color = "#4eafaf"
 
 font = HackNerdFont 9
@@ -54,15 +54,15 @@ mouse_right_click = close_all
 
 [urgency_low]
 timeout = 10
-background = "#073333"
+background = "#064848"
 foreground = "#4eafaf"
 
 [urgency_normal]
 timeout = 10
-background = "#073333"
+background = "#064848"
 foreground = "#4eafaf"
 
 [urgency_critical]
 timeout = 0
-background = "#073333"
+background = "#064848"
 foreground = "#4eafaf"
