@@ -53,6 +53,14 @@ function install_dotfiles(){
 	echo -e "\e[1;32m Instalando Dependencias..."
 	sleep 2
 	dependencias=(dunst rofi cmatrix polybar lxappearance pcmanfm nitrogen engrampa ranger cmus arandr polybar)
+	
+	
+
+	
+
+	
+
+	
 
 	echo -e "\e[1;32m Comprobando los paquetes nacesarios" 
 	for paquete in "${dependencias[@]}"
