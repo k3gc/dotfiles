@@ -18,6 +18,8 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 * **Menu:** Rofi
 
+* **Icons:** [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+
 ## Atajos de teclado:
 
 - <code>super + @space</code> Abre el menu de aplicaciones.
@@ -46,8 +48,6 @@ para Fedora
 ```sh
 install_fedora.sh
 ```
-
-* Icons [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Creditos
 
