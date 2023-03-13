@@ -39,7 +39,7 @@ git clone https://github.com/k3gc/dotfiles
 
 <b>Ejecuta el script de instalacion</b>
 
-para Arch linus
+para Arch linux
 ```sh
 install_Arch.sh
 ```
