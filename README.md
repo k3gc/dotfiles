@@ -37,12 +37,17 @@ git clone https://github.com/k3gc/dotfiles
 
 <b>Ejecuta el script de instalacion</b>
 
+para Arch linus
 ```sh
-install.sh
+install_Arch.sh
 ```
-Advertencia: script de instalacion solo funciona para Arch Linux
+para Fedora
 
-* Descarga [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+```sh
+install_fedora.sh
+```
+
+* Icons [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Creditos
 
