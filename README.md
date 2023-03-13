@@ -19,7 +19,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 * **Menu:** Rofi
 
 * **Icons:** [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-* **Tema** [ CyberHack](https://www.gnome-look.org/p/1620049/)
+* **Tema:** [ CyberHack](https://www.gnome-look.org/p/1620049/)
 
 ## Atajos de teclado:
 
