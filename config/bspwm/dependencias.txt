@@ -1,0 +1,75 @@
+Dependencias 
+
+
+git clone https://aur.archlinux.org/paru-bin.git
+
+cd paru-bin/
+
+makepkg -si
+
+
+paru -S eww
+
+sudo pacman -S pcmanfm
+
+sudo pacman -S kitty
+
+sudo pacman -S nitrogen
+
+sudo pacman -S lxappearance
+
+sudo pacman -S obs-studio
+
+sudo pacman -S feh
+
+sudo pacman -S deadbeef
+
+sudo pacman -S qimgv
+
+sudo pacman -S htop
+
+sudo pacman -S light
+
+sudo pacman -S blueman
+
+sudo pacman -S dunst
+
+sudo pacman -S simplescreenrecorder
+
+sudo pacman -S xorg-xsetroot
+
+sudo pacman -S i3lock
+
+sudo pacman -S ranger
+
+sudo pacman -S gimp
+
+sudo pacman -S moc
+
+sudo pacman -S cmus
+
+sudo pacman -S cmatrix
+
+sudo pacman -S shotcut
+
+sudo pacman -S networkmanager
+
+sudo pacman -S nm-connection-editor
+
+sudo pacman -S network-manager-applet
+
+sudo pacman -S xfce4-power-manager-settings
+
+sudo pacman -S polybar
+
+sudo pacman -S rofi
+
+sudo pacman -S arandr
+
+sudo pacman -S sxhkd
+
+sudo pacman -S bspwm
+
+sudo pacman -S git
+
+
