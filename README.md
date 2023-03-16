@@ -1,4 +1,4 @@
-![captura06](https://user-images.githubusercontent.com/119272540/224914101-876eac4b-81cb-436b-9853-26dbb647ea55.png)
+![captura07](https://user-images.githubusercontent.com/119272540/225562644-724e7fd6-a804-40b4-98ea-4044b208b955.png)
 
 
 ## ¡Hola!
