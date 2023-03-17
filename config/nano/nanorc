@@ -310,8 +310,7 @@ include "/usr/share/nano/*.nanorc"
 " main
 
 ## For copying a marked region to the system clipboard:
-# bind Sh-M-T "|xsel -ib
-u" main
+#  bind Sh-M-T "^T|xsel -ib^M^[u" main
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
