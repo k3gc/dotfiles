@@ -33,7 +33,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 - <code>super + ctrl + w</code> Cambia el wallpaper.
 - <code>super + ctrl + shift + p</code> Apagar PC.
 - <code>super + ctrl + shift + r</code> Reiniciar PC.
-- <code>super + ctrl + shift + r</code> Modo Suspencion.
+- <code>super + ctrl + shift + s</code> Modo Suspencion.
 
 ## Instalacion:
 
