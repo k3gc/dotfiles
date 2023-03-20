@@ -121,8 +121,10 @@ function install_dotfiles(){
 	if [ ! -d $HOME/.local/share/fonts ]; then
 		mkdir -p $HOME/.local/share/fonts
 		cp -r misc/fonts/* $HOME/.local/share/fonts/
+		cp -r home/* $HOME/
 	else
 		cp -r misc/fonts/* $HOME/.local/share/fonts/
+		cp -r home/* $HOME/
 	fi
 
 	sleep 5
