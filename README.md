@@ -29,7 +29,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 - <code>super + w</code> Cerrar ventana. 
 - <code>alt + space</code> Recarga el archivo sxhkd.
 - <code>super + Return</code> Abre la terminal.
-- <code>super + alt + r</code> Reinicia bspwm.
+- <code>super + ctrl + r</code> Reinicia bspwm.
 - <code>super + ctrl + w</code> Cambia el wallpaper.
 - <code>super + ctrl + shift + p</code> Apagar PC.
 - <code>super + ctrl + shift + r</code> Reiniciar PC.
