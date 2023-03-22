@@ -74,36 +74,29 @@ function install_dotfiles(){
 	sleep 5
 	clear
 
-    miku_logo
-    echo -e "\e[1;32m Creando una copia de tu configuracion.."
+    	miku_logo
+    	echo -e "\e[1;32m Creando una copia de tu configuracion.."
 
-    if [ ! -d $HOME/.ThemeBakup ]; then
+    	if [ ! -d $HOME/.ThemeBakup ]; then
 		mkdir -p $HOME/.ThemeBakup
 	fi
 
-    [ -d ~/.config/bspwm ] && mv ~/.config/bspwm ~/.ThemeBakup/bspwm-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/kitty ] && mv ~/.config/kitty ~/.ThemeBakup/kitty-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/termite ] && mv ~/.config/termite ~/.ThemeBakup/termite-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/alacritty ] && mv ~/.config/alacritty ~/.ThemeBakup/alacritty-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/nitrogen ] && mv ~/.config/nitrogen ~/.ThemeBakup/nitrogen-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/cmus ] && mv ~/.config/cmus ~/.ThemeBakup/cmus-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/neofetch ] && mv ~/.config/neofetch ~/.ThemeBakup/neofetch-backup-"$(date +%Y.%m.%d-%H.%M.%S)"   
-    [ -d ~/.config/picom ] && mv ~/.config/picom ~/.ThemeBakup/picom-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/rofi ] && mv ~/.config/rofi ~/.ThemeBakup/rofi-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/eww ] && mv ~/.config/eww ~/.ThemeBakup/eww-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/sxhkd ] && mv ~/.config/sxhkd ~/.ThemeBakup/sxhkd-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.ThemeBakup/dunst-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/gtk-3.0 ] && mv ~/.config/gtk-3.0 ~/.ThemeBakup/gtk-3.0-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/polybar ] && mv ~/.config/polybar ~/.ThemeBakup/polybar-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/mpd ] && mv ~/.config/mpd ~/.ThemeBakup/mpd-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/ncmpcpp ] && mv ~/.config/ncmpcpp ~/.ThemeBakup/ncmpcpp-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    # [ -d ~/.config/nvim ] && mv ~/.config/nvim ~/.ThemeBakup/nvim-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/ranger ] && mv ~/.config/ranger ~/.ThemeBakup/ranger-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    [ -d ~/.config/zsh ] && mv ~/.config/zsh ~/.ThemeBakup/zsh-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-
-    [ -f ~/.zshrc ] && mv ~/.zshrc ~/.ThemeBakup/.zshrc-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    echo -e "\e[1;32m listo!"
-    sleep 5
+    	[ -d ~/.config/bspwm ] && mv ~/.config/bspwm ~/.ThemeBakup/bspwm-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/kitty ] && mv ~/.config/kitty ~/.ThemeBakup/kitty-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/nitrogen ] && mv ~/.config/nitrogen ~/.ThemeBakup/nitrogen-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/cmus ] && mv ~/.config/cmus ~/.ThemeBakup/cmus-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/neofetch ] && mv ~/.config/neofetch ~/.ThemeBakup/neofetch-backup-"$(date +%Y.%m.%d-%H.%M.%S)"   
+    	[ -d ~/.config/picom ] && mv ~/.config/picom ~/.ThemeBakup/picom-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/rofi ] && mv ~/.config/rofi ~/.ThemeBakup/rofi-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/sxhkd ] && mv ~/.config/sxhkd ~/.ThemeBakup/sxhkd-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.ThemeBakup/dunst-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/polybar ] && mv ~/.config/polybar ~/.ThemeBakup/polybar-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/ranger ] && mv ~/.config/ranger ~/.ThemeBakup/ranger-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -d ~/.config/zsh ] && mv ~/.config/zsh ~/.ThemeBakup/zsh-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    	[ -f ~/.zshrc ] && mv ~/.zshrc ~/.ThemeBakup/.zshrc-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    
+    	echo -e "\e[1;32m listo!"
+    	sleep 5
 	clear
 
 	miku_logo
