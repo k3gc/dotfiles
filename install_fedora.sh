@@ -75,7 +75,7 @@ function install_dotfiles(){
 	clear
 
     miku_logo
-    echo -e "\e[1;32m Creando una copia de tus archivos.."
+    echo -e "\e[1;32m Creando una copia de tu configuracion.."
 
     if [ ! -d $HOME/.ThemeBakup ]; then
 		mkdir -p $HOME/.ThemeBakup
@@ -129,6 +129,9 @@ function install_dotfiles(){
 
 	sleep 5
 	clear
+	
+	chsh -s /usr/bin/zsh
+	zsh
 
 	miku_logo
 	echo -en "\e[1;32m dotfiles copiados con exito\n"
