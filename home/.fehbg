@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --randomize --no-fehbg --bg-fill ~/.config/bspwm/walls/miku/
+feh --randomize --no-fehbg --bg-fill ~/.config/bspwm/walls/*
