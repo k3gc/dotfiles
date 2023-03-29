@@ -8,9 +8,9 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 * **OS:**  Fedora Linux
 
-* **WM:**  Bspwm
+* **WM:**  [ Bspwm](https://github.com/baskerville/bspwm)
 
-* **Terminal:** [ Kitty]()
+* **Terminal:** [ Kitty](https://sw.kovidgoyal.net/kitty/)
 
 * **Compositor:** [ Picom](https://github.com/yshui/picom)
 
