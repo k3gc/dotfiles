@@ -10,13 +10,13 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 * **WM:**  Bspwm
 
-* **Terminal:** Kitty
+* **Terminal:** [ Kitty]()
 
-* **Compositor:** Picom
+* **Compositor:** [ Picom](https://github.com/yshui/picom)
 
-* **Editor:** Nano
+* **Editor:** [ Nano](https://www.nano-editor.org/)
 
-* **Menu:** Rofi
+* **Menu:** [ Rofi](https://github.com/davatorium/rofi)
 
 * **Icons:** [ papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 * **Tema:** [ CyberHack](https://www.gnome-look.org/p/1620049/)
