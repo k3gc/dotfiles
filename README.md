@@ -25,7 +25,7 @@ Estos son mis dotfiles para BSPWM y Polybar.
 
 - <code>super + @space</code> Abre el menu de aplicaciones.
 - <code>super + Return</code> Abre la terminal.
-- - <code>alt + space</code> Abre el menu de estilos.
+- <code>alt + space</code> Abre el menu de estilos.
 - <code>super + w</code> Cerrar ventana. 
 
 - <code>super + ctrl + r</code> Reinicia bspwm.
