@@ -88,7 +88,7 @@ alias cat='bat'
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-sudo/sudo.plugin.zsh
+source $HOME/.oh-my-zsh/plugins/sudo/sudo.plugin.zsh
 
 # Functions
 function mkt(){
@@ -150,6 +150,11 @@ function espdownload(){
 function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
+}
+
+function build(){
+	gcc -o $1 $1.c
+	./$1
 }
 
 function is_installed(){
