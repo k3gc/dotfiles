@@ -138,7 +138,7 @@ function install_papirus_icon(){
 
 function install_aplications(){
 
-	applications=(gimp krita deadbeef simplescreenrecorder shotcut vslc qimgv)
+	applications=(gimp krita deadbeef simplescreenrecorder shotcut vlc qimgv)
 
 	is_installed() {
 	    dnf list installed $1 >/dev/null 2>&1 ;
