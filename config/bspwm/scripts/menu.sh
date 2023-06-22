@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme $HOME/dotfiles/bspwm/scripts/RiceSelector.rasi"
+rofi_command="rofi -theme $HOME/.config/bspwm/scripts/theme/RiceSelector.rasi"
 
 # Options
 Option1="󰔿 Miku"
