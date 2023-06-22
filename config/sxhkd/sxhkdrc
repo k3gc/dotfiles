@@ -15,7 +15,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'El archivo de configuracion se ha recargado con exito'
 
 
 # ╔═════════════════════════╗
@@ -51,9 +51,9 @@ F7
 F8
 	~/.config/bspwm/scripts/vol_plus.sh
 
-# Reload sxhkd
+# Open menu
 alt + space
-	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'El archivo de configuracion se ha recargado con exito'
+	${HOME}/.config/bspwm/scripts/menu.sh
 
 
 # ╔═════════════════════════╗
