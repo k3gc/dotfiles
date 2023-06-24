@@ -52,7 +52,7 @@ function install_dotfiles(){
 	echo -e "\e[1;32m Instalando Dependencias..."
 	sleep 2
 
-	dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop zsh-autosuggestions zsh-syntax-highlighting)
+	dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git)
 
 	is_installed() {
 	    dnf list installed $1 >/dev/null 2>&1
@@ -74,29 +74,29 @@ function install_dotfiles(){
 	sleep 5
 	clear
 
-    	miku_logo
-    	echo -e "\e[1;32m Creando una copia de tu configuracion.."
+    miku_logo
+    echo -e "\e[1;32m Creando una copia de tu configuracion.."
 
-    	if [ ! -d $HOME/.ThemeBakup ]; then
+    if [ ! -d $HOME/.ThemeBakup ]; then
 		mkdir -p $HOME/.ThemeBakup
 	fi
 
-    	[ -d ~/.config/bspwm ] && mv ~/.config/bspwm ~/.ThemeBakup/bspwm-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/kitty ] && mv ~/.config/kitty ~/.ThemeBakup/kitty-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/nitrogen ] && mv ~/.config/nitrogen ~/.ThemeBakup/nitrogen-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/cmus ] && mv ~/.config/cmus ~/.ThemeBakup/cmus-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/neofetch ] && mv ~/.config/neofetch ~/.ThemeBakup/neofetch-backup-"$(date +%Y.%m.%d-%H.%M.%S)"   
-    	[ -d ~/.config/picom ] && mv ~/.config/picom ~/.ThemeBakup/picom-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/rofi ] && mv ~/.config/rofi ~/.ThemeBakup/rofi-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/sxhkd ] && mv ~/.config/sxhkd ~/.ThemeBakup/sxhkd-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.ThemeBakup/dunst-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/polybar ] && mv ~/.config/polybar ~/.ThemeBakup/polybar-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/ranger ] && mv ~/.config/ranger ~/.ThemeBakup/ranger-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -d ~/.config/zsh ] && mv ~/.config/zsh ~/.ThemeBakup/zsh-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
-    	[ -f ~/.zshrc ] && mv ~/.zshrc ~/.ThemeBakup/.zshrc-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/bspwm ] && mv ~/.config/bspwm ~/.ThemeBakup/bspwm-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/kitty ] && mv ~/.config/kitty ~/.ThemeBakup/kitty-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/nitrogen ] && mv ~/.config/nitrogen ~/.ThemeBakup/nitrogen-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/cmus ] && mv ~/.config/cmus ~/.ThemeBakup/cmus-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/neofetch ] && mv ~/.config/neofetch ~/.ThemeBakup/neofetch-backup-"$(date +%Y.%m.%d-%H.%M.%S)"   
+    [ -d ~/.config/picom ] && mv ~/.config/picom ~/.ThemeBakup/picom-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/rofi ] && mv ~/.config/rofi ~/.ThemeBakup/rofi-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/sxhkd ] && mv ~/.config/sxhkd ~/.ThemeBakup/sxhkd-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/dunst ] && mv ~/.config/dunst ~/.ThemeBakup/dunst-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/polybar ] && mv ~/.config/polybar ~/.ThemeBakup/polybar-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/ranger ] && mv ~/.config/ranger ~/.ThemeBakup/ranger-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -d ~/.config/zsh ] && mv ~/.config/zsh ~/.ThemeBakup/zsh-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    [ -f ~/.zshrc ] && mv ~/.zshrc ~/.ThemeBakup/.zshrc-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
     
-    	echo -e "\e[1;32m listo!"
-    	sleep 5
+    echo -e "\e[1;32m listo!"
+    sleep 5
 	clear
 
 	miku_logo
@@ -158,6 +158,41 @@ function install_aplications(){
 	done
 }
 
+function install_pico_sdk(){
+
+	tools=(gcc-arm-linux-gnu arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils arm-none-eabi-newlib)
+
+	is_installed() {
+	    dnf list installed $1 >/dev/null 2>&1 ;
+        return $?
+	}
+
+	echo -e "\e[1;32m Comprobando los paquetes nacesarios" 
+	for paquete in "${tools[@]}"
+	do
+	  if ! is_installed $paquete; then
+	    sudo dnf install $paquete -y
+	    printf "\n"
+	  else
+	    echo -e "\e[1;32m $paquete ya está instalado en su sistema"
+	    sleep 1
+	  fi
+	done
+
+	sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+
+	cd
+
+	git clone https://github.com/raspberrypi/pico-sdk
+
+	cd ~/pico-sdk/src/rp2_common/tinyusb
+
+	git submodule update --init
+
+	cd -
+
+}
+
 
 function title() {
 	echo -e "\e[1;32m
@@ -177,7 +212,8 @@ echo " "
 echo -e "\e[1;36m  {1} -> \e[1;37mInstalar Miku-theme"
 echo -e "\e[1;36m  {2} -> \e[1;37mInstalar papirus-icon-theme"
 echo -e "\e[1;36m  {3} -> \e[1;37mInstalar aplicaciones"
-echo -e "\e[1;36m  {4} -> \e[1;37mSalir"
+echo -e "\e[1;36m  {4} -> \e[1;37mInstalar pico-sdk"
+echo -e "\e[1;36m  {5} -> \e[1;37mSalir"
 echo " "
 echo -n -e "\e[1;36m  > "
 echo -n -e "\e[1;37m"
@@ -196,5 +232,8 @@ if [ $option == 3 ]; then
 	install_aplications
 fi
 if [ $option == 4 ]; then
+	install_pico_sdk
+fi
+if [ $option == 5 ]; then
 	exit
 fi
