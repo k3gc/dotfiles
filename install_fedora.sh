@@ -52,7 +52,7 @@ function install_dotfiles(){
 	echo -e "\e[1;32m Instalando Dependencias..."
 	sleep 2
 
-	dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git)
+	dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol)
 
 	is_installed() {
 	    dnf list installed $1 >/dev/null 2>&1
