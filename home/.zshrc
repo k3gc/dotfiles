@@ -157,6 +157,19 @@ function build(){
 	./$1
 }
 
+function create_rp2040(){
+	mkdir $1
+	cd $1
+
+	cp -rf ~/sofy_32/RP2040/sample_project/* .
+	cp ~/pico-sdk/external/pico_sdk_import.cmake .
+
+	mkdir build
+	cd build
+
+	export PICO_SDK_PATH=~/pico-sdk
+}
+
 function is_installed(){
 	paquete_installed() {
             dnf list installed $1 >/dev/null 2>&1
@@ -179,7 +192,8 @@ function is_installed(){
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #alias neofetch='neofetch --source ~/.config/neofetch/ascii/miku.txt'
-alias neofetch='neofetch --source ${HOME}/.config/neofetch/images/$PERFIL.jpg'
+#alias neofetch='neofetch --source ${HOME}/.config/neofetch/images/$PERFIL.jpg'
+alias neofetch='neofetch --source ${HOME}/.config/neofetch/images/perfil28.png'
 alias cmatrix='cmatrix -C cyan'
 alias kitty=' kitty +kitten icat'
 alias launchbar="${HOME}/.config/polybar/launch.sh"
