@@ -305,9 +305,9 @@ include "/usr/share/nano/*.nanorc"
 ## (These effectively do a Ctrl+Right followed by a Shift+Ctrl+Left,
 ## and then pipe the selected text through a sed command.)
 # bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'
-" main
+# main
 # bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'
-" main
+# main
 
 ## For copying a marked region to the system clipboard:
 #  bind Sh-M-T "^T|xsel -ib^M^[u" main
