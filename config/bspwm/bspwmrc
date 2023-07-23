@@ -8,11 +8,13 @@ xsetroot -cursor_name left_ptr &
 picom --config ~/.config/bspwm/picom.conf &
 dunst -conf ~/.config/dunst/dunstrc &
 
-#$HOME/.fehbg &
-nitrogen --restore &
+$HOME/.fehbg &
+#nitrogen --restore &
+
 #$HOME/.config/polybar/launch.sh &
 $HOME/.config/polybar/nia/polybar/launch.sh &
 #$HOME/.config/polybar/sofy/polybar/launch.sh
+
 $HOME/.config/bspwm/scripts/low_bat_notifier.sh &
 
 nm-applet --no-agent &
