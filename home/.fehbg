@@ -1,2 +1,3 @@
 #!/bin/sh
-feh --randomize --no-fehbg --bg-fill ~/.config/bspwm/walls/*
+#feh --randomize --no-fehbg --bg-fill ~/.config/bspwm/walls/*
+feh --bg-scale ~/.config/bspwm/walls/miku/miku_wall14.jpg
