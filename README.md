@@ -46,12 +46,14 @@ git clone https://github.com/k3gc/dotfiles
 
 para Arch linux
 ```sh
-install_Arch.sh
+chmod +x install_Arch.sh
+./install_Arch.sh
 ```
 para Fedora
 
 ```sh
-install_fedora.sh
+chmod +x install_fedora.sh
+./install_fedora.sh
 ```
 
 ## Creditos
