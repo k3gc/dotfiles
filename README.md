@@ -1,4 +1,4 @@
-![captura10](https://github.com/k3gc/dotfiles/assets/119272540/993d3a23-3e65-460f-87d4-810f8c106c07)
+![captura10](https://github.com/k3gc/dotfiles/assets/119272540/7f2c0434-310d-47d5-8552-e3e497faee9d)
 
 ## ¡Hola!
 Estos son mis dotfiles para BSPWM y Polybar.
