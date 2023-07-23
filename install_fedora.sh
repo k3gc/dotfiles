@@ -29,12 +29,12 @@ function install_dotfiles(){
 	⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣻⣷⣯⠛⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠾⠛⣽⣿⣯⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀
 	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢽⣷⣄⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⣠⣾⡿⠗⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 	⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠓⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                            By sofi_32\n\n"
+                                            By sofy_32\n\n"
 		sleep 2
 	}
 	
 	miku_logo
-	echo -e "\e[1;32m Bienvenid@"
+	echo -e "\e[1;32m Bienvenid@" $USER
 	echo -e "\e[1;32m Este script instalará las dependencias necesarias y copiará mis dotfiles a su configuración de bspwm."
 	sleep 5
 
@@ -51,8 +51,8 @@ function install_dotfiles(){
 	miku_logo
 	echo -e "\e[1;32m Instalando Dependencias..."
 	sleep 2
-
-	dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol hexyl)
+	#dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol hexyl)
+	dependencias=(bspwm sxhkd polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol hexyl zsh-syntax-highlighting zsh-autosuggestions)
 
 	is_installed() {
 	    dnf list installed $1 >/dev/null 2>&1
@@ -71,6 +71,23 @@ function install_dotfiles(){
 	  fi
 	done
 	
+	sleep 5
+	clear
+
+	miku_logo
+	echo -e "\e[1;32m Asignando permisos de ejecucion"
+
+	chmod +x config/bspwm/bspwmrc
+	chmod +x config/bspwm/scripts/*.sh
+	chmod +x config/dunst/dunstrc
+	chmod +x config/polybar/launch.sh
+	chmod +x config/polybar/nia/polybar/launch.sh
+	chmod +x config/polybar/sofy/polybar/launch.sh
+	chmod +x config/ranger/scope.sh
+	chmod +x config/rofi/scripts/*.sh
+	chmod +x config/sxhkd/sxhkdrc
+	chmod +x home/.*
+
 	sleep 5
 	clear
 
@@ -114,21 +131,46 @@ function install_dotfiles(){
 	if [ ! -d $HOME/.local/share/fonts ]; then
 		mkdir -p $HOME/.local/share/fonts
 		cp -r misc/fonts/* $HOME/.local/share/fonts/
-		cp -r home/* $HOME/
+		cp -r home/.* $HOME/
 	else
 		cp -r misc/fonts/* $HOME/.local/share/fonts/
-		cp -r home/* $HOME/
+		cp -r home/.* $HOME/
+	fi
+
+	if [ ! -d $HOME/.themes ]; then
+		mkdir -p $HOME/.themes
+		#cp -r misc/themes/* $HOME/.themes/
+		tar -xf misc/themes/CyberHack-master.tar.gz -C $HOME/.themes/
+	else
+		#cp -r misc/themes/* $HOME/.themes/
+		tar -xf misc/themes/CyberHack-master.tar.gz -C $HOME/.themes/
+	fi
+
+	if [ ! -d $HOME/.icons ]; then
+		mkdir -p $HOME/.icons
+		#cp -r misc/cursor/* $HOME/.icons/
+		tar -xf misc/cursor/Sanae.tar.gz -C $HOME/.icons/
+	else
+		#cp -r misc/cursor/* $HOME/.icons/
+		tar -xf misc/cursor/Sanae.tar.gz -C $HOME/.icons/
 	fi
 
 	sleep 5
 	clear
 	
-	chsh -s /usr/bin/zsh
-	zsh
+	#chsh -s /usr/bin/zsh
 
 	miku_logo
 	echo -en "\e[1;32m dotfiles copiados con exito\n"
 	echo -n -e "\e[1;37m"
+
+	sleep 5
+	clear
+
+	miku_logo
+	echo -e "\e[1;32m Instalando ohmyzsh"
+	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 }
 
 function install_papirus_icon(){
