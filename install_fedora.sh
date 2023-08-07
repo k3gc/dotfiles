@@ -200,17 +200,67 @@ function install_aplications(){
 	done
 }
 
-function install_pico_sdk(){
+function install_Configuration(){
+	clear
+	miku_logo () {
+		echo -en "\e[1;36m
+	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣶⣶⣶⣶⣶⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⢏⣼⠿⣦⠀⣠⣶⣿⣿⡿⣟⣿⣯⣿⢯⣿⣯⣿⢿⣿⣿⣦⣄⣀⣾⢿⣎⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⢣⡿⣛⣷⣿⣿⣿⢿⣯⣷⣿⡿⣯⣷⣿⢿⣯⣷⡿⣿⣻⣾⢿⡿⣿⣷⣿⣙⣧⡻⣦⠀⠀⠀⠀⢀⠀⠀⠀⠀
+	⠀⠀⢀⣤⠀⠀⠀⣰⡟⣡⣿⣿⡿⣟⣯⣿⣾⣿⣻⣽⣾⣿⢿⣽⣾⣿⣻⣽⣿⣟⣿⣽⡿⣿⣻⣷⡿⣿⣿⣷⡘⢷⡀⠀⣀⣾⣄⠀⠀⠀
+	⠀⢤⣾⣿⣷⠤⠈⣻⣆⢻⣿⣯⣿⢿⣻⣽⣾⣟⣿⣯⣷⡿⣿⠋⠓⠻⠿⠿⣾⣟⣯⣿⣟⣿⣟⣷⣿⢿⣾⣟⠏⣼⣏⠀⠙⣿⠋⡉⠀⠀
+	⠀⠀⠈⡿⠁⢠⣾⣿⣿⣦⢿⣯⣿⣿⣿⣿⣽⣾⡿⣽⣷⣿⣿⣷⣄⠀⠀⠀⠀⠉⢿⣷⣿⣿⣾⣿⣯⣿⣿⢎⣾⣿⣿⣷⣄⠸⣴⣧⡄⠀
+	⠀⠀⠀⠃⣠⣿⣿⣟⣿⢿⣧⣿⡿⣿⣿⣟⣿⠏⠀⠈⠛⠿⣿⣿⢿⣧⣀⠀⠀⠀⠀⠉⢿⣿⣯⣿⢿⣻⣽⣿⣿⣻⣽⣿⣿⣄⠈⠇⠀⠀
+	⠀⠀⠀⣰⣿⢿⣯⣿⣟⣿⣯⣿⣟⣿⡷⣿⠃⠀⠀⠀⠀⠀⠀⠉⠙⠛⠛⠛⠒⠂⠀⠀⠀⠹⣿⣽⡿⣿⣯⣿⣾⣟⣿⣾⡿⣿⣆⠀⠀⠀
+	⠀⠀⣴⣿⢯⣿⣟⣷⣿⣯⣷⣿⣻⣽⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣟⣿⡷⣿⣳⣿⣯⣷⣿⡽⣿⣆⠀⠀
+	⠀⢰⣿⡏⣾⣿⢯⣿⣾⢿⢸⣟⣿⣧⢿⡇⠀⢠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⣤⣄⠀⠀⣿⣹⣿⣽⡟⣿⣷⡿⣯⣿⣷⢹⣿⡆⠀
+	⠀⣾⣿⢰⣿⡿⣿⣯⣿⡇⠸⣿⣿⢾⡎⠣⠀⠈⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠋⠀⠀⣡⡿⣯⣿⡇⢸⣿⣟⣿⡷⣿⡆⣿⣷⠀
+	⢰⣿⡇⣸⣿⣟⣿⡷⣿⡏⠀⢿⣿⠈⠻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠁⣿⣿⠁⢸⣿⡿⣽⣿⢿⣇⢸⣿⡆
+	⢸⣿⡇⣿⣿⣾⢿⣽⣿⡇⠀⠸⣿⠀⠀⠈⠣⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⣿⠇⠀⢸⣿⢿⣿⣽⡿⣿⢸⣿⡇
+	⢸⣿⡇⣿⣷⡿⣿⣯⣷⡇⠀⠀⠘⡄⠀⠀⠀⠀⠑⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠊⠁⠀⠀⠀⠀⠏⠀⠀⢸⣿⣿⣻⣾⢿⣿⢸⣿⡇
+	⢸⣿⡇⢹⣿⣟⣿⣽⡿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⣽⣿⣻⡟⢸⣿⡇
+	⠀⣿⣷⢸⣿⣻⣯⣿⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡿⣿⣽⡿⡇⣾⣿⠀
+	⠀⢹⣿⡆⣿⣿⣽⣿⣻⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⢿⣿⣽⣿⢰⣿⡏⠀
+	⠀⠀⢿⣿⡼⣿⣾⢿⣽⣟⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡿⣟⣿⣾⢧⣿⡿⠀⠀
+	⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
+	⠀⠀⠀⠈⢿⣿⢯⣷⣿⣯⣿⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⢾⣯⣿⢿⡽⠃⠀⠀⠀
+	⠀⠀⠀⠀⠀⢿⣿⣟⣷⡿⣯⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⢾⣿⣻⣽⠟⠁⠀⠀⠀⠀
+	⠀⠀⠀⠀⠀⠀⠈⢻⣯⣿⣟⣯⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣟⣾⣿⣻⡟⠁⠀⠀⠀⠀⠀⠀
+	⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣻⣷⣯⠛⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠾⠛⣽⣿⣯⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀
+	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢽⣷⣄⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⣠⣾⡿⠗⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+	⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠓⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                            By sofy_32\n\n"
+		sleep 2
+	}
+	
+	miku_logo
+	echo -e "\e[1;32m Bienvenid@" $USER
+	echo -e "\e[1;32m Este script instalará herramientas para la zsh y aplicaciones."
+	sleep 5
 
-	tools=(gcc-arm-linux-gnu arm-none-eabi-gcc-cs-c++ arm-none-eabi-gcc-cs arm-none-eabi-binutils arm-none-eabi-newlib)
+	while true; do
+		read -rp " Desea continuar? [y/N]: " yn
+			case $yn in
+				[Yy]* ) break;;
+				[Nn]* ) exit;;
+				* ) printf " Error: solo escribe 'y' o 'n'\n\n";;
+			esac
+    	done
+				clear
+
+	miku_logo
+	echo -e "\e[1;32m Instalando paquetes..."
+	sleep 2
+
+	dependencias=(kitty zsh cmatrix htop neofetch git hexyl zsh-syntax-highlighting zsh-autosuggestions)
 
 	is_installed() {
-	    dnf list installed $1 >/dev/null 2>&1 ;
+	    dnf list installed $1 >/dev/null 2>&1
         return $?
 	}
 
 	echo -e "\e[1;32m Comprobando los paquetes nacesarios" 
-	for paquete in "${tools[@]}"
+	for paquete in "${dependencias[@]}"
 	do
 	  if ! is_installed $paquete; then
 	    sudo dnf install $paquete -y
@@ -220,18 +270,63 @@ function install_pico_sdk(){
 	    sleep 1
 	  fi
 	done
+	
+	sleep 5
+	clear
 
-	sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+	miku_logo
+	echo -e "\e[1;32m Asignando permisos de ejecucion"
 
-	cd
+	chmod +x home/.*
 
-	git clone https://github.com/raspberrypi/pico-sdk
+	sleep 5
+	clear
 
-	cd ~/pico-sdk/src/rp2_common/tinyusb
+    miku_logo
+    echo -e "\e[1;32m Creando una copia de tu configuracion.."
 
-	git submodule update --init
+    if [ ! -d $HOME/.zshBakup ]; then
+		mkdir -p $HOME/.zshBakup
+	fi
 
-	cd -
+    [ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshBakup/.zshrc-backup-"$(date +%Y.%m.%d-%H.%M.%S)"
+    
+    echo -e "\e[1;32m listo!"
+    sleep 5
+	clear
+
+	miku_logo
+	echo -e "\e[1;32m copiando config.."
+
+	if [ ! -d $HOME/.local/share/fonts ]; then
+		mkdir -p $HOME/.local/share/fonts
+		cp -r misc/fonts/* $HOME/.local/share/fonts/
+		cp -r home/.* $HOME/
+	else
+		cp -r misc/fonts/* $HOME/.local/share/fonts/
+		cp -r home/.* $HOME/
+	fi
+
+	if [ ! -d $HOME/.icons ]; then
+		mkdir -p $HOME/.icons
+		#cp -r misc/cursor/* $HOME/.icons/
+		tar -xf misc/cursor/Sanae.tar.gz -C $HOME/.icons/
+	else
+		#cp -r misc/cursor/* $HOME/.icons/
+		tar -xf misc/cursor/Sanae.tar.gz -C $HOME/.icons/
+	fi
+
+	sleep 5
+	clear
+	
+	#chsh -s /usr/bin/zsh
+
+	sleep 5
+	clear
+
+	miku_logo
+	echo -e "\e[1;32m Instalando ohmyzsh"
+	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 }
 
@@ -251,7 +346,7 @@ clear
 title
 echo -e "\e[1;36m  selecciona una opción:"
 echo " "
-echo -e "\e[1;36m  {1} -> \e[1;37mInstalar Miku-theme"
+echo -e "\e[1;36m  {1} -> \e[1;37mInstalar configuracion"
 echo -e "\e[1;36m  {2} -> \e[1;37mInstalar papirus-icon-theme"
 echo -e "\e[1;36m  {3} -> \e[1;37mInstalar aplicaciones"
 echo -e "\e[1;36m  {4} -> \e[1;37mInstalar pico-sdk"
@@ -265,7 +360,7 @@ clear
 
 
 if [ $option == 1 ]; then
-	install_dotfiles
+	install_Configuration
 fi
 if [ $option == 2 ]; then
 	install_papirus_icon
