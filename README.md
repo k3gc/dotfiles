@@ -54,4 +54,4 @@ chmod +x install_fedora.sh
 ## Creditos
 
 * Los temas para rofi los saque de aqui.
-[adi1090x](https://github.com/adi1090x/widgets)
+[adi1090x](https://github.com/adi1090x/rofi)
