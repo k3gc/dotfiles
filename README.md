@@ -46,7 +46,7 @@ git clone https://github.com/k3gc/dotfiles
 
 ```sh
 chmod +x install_fedora.sh
-./install_fedora.sh
+./install.sh
 ```
 
 ## Creditos
