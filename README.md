@@ -1,4 +1,6 @@
-![captura07](https://github.com/user-attachments/assets/af00e7fb-e95c-48a3-aabf-c4944061c1fe)## Instalacion:
+![captura07](https://github.com/user-attachments/assets/af00e7fb-e95c-48a3-aabf-c4944061c1fe)##
+
+Instalacion:
 
 <b>Clona este repositorio</b>
 
