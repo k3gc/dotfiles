@@ -147,9 +147,9 @@ function install_dotfiles(){
 	chmod +x config/bspwm/bspwmrc
 	chmod +x config/bspwm/scripts/*.sh
 	chmod +x config/dunst/dunstrc
-	chmod +x config/rice/miku/polybar/launch.sh
-	chmod +x config/rice/sofy/polybar/launch.sh
-	chmod +x config/rice/sofy_32/polybar/launch.sh
+	chmod +x config/rices/miku/polybar/launch.sh
+	chmod +x config/rices/sofy/polybar/launch.sh
+	chmod +x config/rices/sofy_32/polybar/launch.sh
 	chmod +x config/ranger/scope.sh
 	chmod +x config/rofi/scripts/*.sh
 	chmod +x config/sxhkd/sxhkdrc
