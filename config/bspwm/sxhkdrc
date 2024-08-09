@@ -11,7 +11,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun -theme $HOME/.config/bspwm/rices/$RICETHEME/launcher.rasi
+	rofi -show drun -theme $HOME/.config/bspwm/miku/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
