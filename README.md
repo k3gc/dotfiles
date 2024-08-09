@@ -2,9 +2,6 @@
 
 ![captura05](https://github.com/user-attachments/assets/286e16dd-9601-4d07-be24-b8bb2198692e)
 
-## ¡Hola!
-Estos son mis dotfiles para BSPWM y Polybar.
-
 ## Información:
 **detalles sobre mi configuración:**
 
