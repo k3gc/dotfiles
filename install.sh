@@ -147,7 +147,7 @@ function install_dotfiles(){
 	chmod +x config/bspwm/bspwmrc
 	chmod +x config/bspwm/scripts/*.sh
 	chmod +x config/dunst/dunstrc
-	chmod +x config/miku/polybar/launch.sh
+	chmod +x config/bspwm/miku/polybar/launch.sh
 	chmod +x config/ranger/scope.sh
 	chmod +x config/rofi/scripts/*.sh
 	chmod +x config/sxhkd/sxhkdrc
