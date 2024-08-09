@@ -51,7 +51,7 @@ function install_dotfiles(){
 	title
 	echo -e "\e[1;36m  selecciona tu distribucion:"
 	echo " "
-	echo -e "\e[1;36m  {1} -> \e[1;37mDebian"
+	echo -e "\e[1;36m  {1} -> \e[1;37mKali"
 	echo -e "\e[1;36m  {2} -> \e[1;37mFedora"
 	echo -e "\e[1;36m  {3} -> \e[1;37mArch"
 	echo -e "\e[1;36m  {4} -> \e[1;37mSalir"
@@ -61,7 +61,7 @@ function install_dotfiles(){
 	read option
 
 	if [ $option == 1 ]; then
-		distro="debian"
+		distro="kali"
 	fi
 	if [ $option == 2 ]; then
 		distro="fedora"
@@ -95,7 +95,7 @@ function install_dotfiles(){
 	#dependencias=(polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol hexyl)
 	dependencias=(kitty picom bspwm sxhkd polybar dunst rofi engrampa zsh cmatrix pcmanfm lxappearance nitrogen ranger cmus arandr light i3lock blueman xsetroot feh htop git pavucontrol hexyl zsh-syntax-highlighting zsh-autosuggestions)
 
-	if [ $distro == "debian" ]; then
+	if [ $distro == "kali" ]; then
 		is_installed() {
     		dpkg-query -W -f='${Status}' $1 >/dev/null 2>&1
     		return $?
@@ -121,7 +121,7 @@ function install_dotfiles(){
 	do
 	  if ! is_installed $paquete; then
 
-	  	if [ $distro == "debian" ]; then
+	  	if [ $distro == "kali" ]; then
 			sudo apt install $paquete -y
 		fi
 		if [ $distro == "fedora" ]; then
