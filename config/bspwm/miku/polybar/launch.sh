@@ -9,4 +9,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 ## Launch
 
 ## bar
-polybar miku-bar -c ~/.config/bspwm/bar/miku/polybar/config.ini &
+polybar miku-bar -c ~/.config/bspwm/miku/polybar/config.ini &
